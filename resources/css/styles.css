@@ -1,0 +1,143 @@
+/* bootstrap basic setup */
+.selector-for-some-widget {
+    box-sizing: content-box;
+}
+
+/* personal background and hover styles */
+.my-bg-blue-dark{
+    background-color: #0052cc;
+    color: #FFFFFF;
+}
+.my-bg-blue-dark :hover{
+    background-color: #0d6efd;
+    color: #FFFFFF;
+}
+.my-color-white{
+    color: #FFFFFF;
+}
+.hover-bg-blue :hover{
+    background-color: #0d6efd;
+    color: #FFFFFF;
+}
+.hover-bg-light :hover{
+    color: black;
+}
+.link-color-black, :hover{
+    color: #212529;
+    text-decoration: none;
+}
+.my-class-orders-color-final{
+    background-color: rgba(32, 201, 151, 0.2);  
+}
+.my-class-orders-color-confirmed{
+    background-color: rgba(13, 202, 240, 0.2);  
+}
+.my-class-orders-color-pending{
+    background-color: rgba(255, 193, 7, 0.2);  
+}
+.my-class-orders-color-canceled{
+    background-color: rgba(220, 53, 69, 0.2);  
+}
+.my-text-dark-bold-color{
+    color: #000;
+    font-weight: 500;
+}
+.my-bg-red-warn{
+    background-color: rgba(220, 53, 69, 1);
+}
+.my-bg-red-warn :hover{
+    background-color: rgba(220, 53, 69, 0.4);;
+}
+
+
+/* for zooming on hovering in images */
+.zoom {
+    transition: transform .1s; /* Animation */
+}  
+.zoom:hover {
+    transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+
+
+.my-class-float-right{
+    float: right;
+}
+
+
+.qty-width{
+    width:40px;
+}
+
+/* --------------------------------sidebar start--------------------------------- */
+/* sidebar */
+#body-row {
+    margin-left:0;
+    margin-right:0;
+}
+#sidebar-container {
+    min-height: 100vh;   
+    background-color: #f8f9fa;
+    padding: 0;
+}
+
+/* Sidebar sizes when expanded and expanded */
+.sidebar-expanded {
+    width: 230px;
+}
+.sidebar-collapsed {
+    width: 60px;
+}
+
+/* Menu item*/
+#sidebar-container .list-group a {
+    height: 50px;
+    color: black;
+}
+
+/* Submenu item*/
+#sidebar-container .list-group .sidebar-submenu a {
+    height: 45px;
+    padding-left: 30px;
+}
+.sidebar-submenu {
+    font-size: 0.9rem;
+}
+
+/* Separators */
+.sidebar-separator-title {
+    background-color: #f8f9fa;
+    height: 35px;
+}
+.sidebar-separator {
+    background-color: #f8f9fa;
+    height: 25px;
+}
+.logo-separator {
+    background-color: #f8f9fa;    
+    height: 60px;
+}
+
+/* Closed submenu icon */
+#sidebar-container .list-group .list-group-item[aria-expanded="false"]{
+  content: " \f0d7";
+  display: inline;
+  text-align: right;
+  padding-left: 10px;
+}
+/* Opened submenu icon */
+#sidebar-container .list-group .list-group-item[aria-expanded="true"]{
+  content: " \f0da";
+  display: inline;
+  text-align: right;
+  padding-left: 10px;
+}
+
+
+/* --------------------------------------sidebar end------------------------------ */
+
+#searchBoxBig{
+    display: none;
+}
+
+

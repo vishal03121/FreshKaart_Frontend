@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="./resources/images/logos_images/icon.ico">
+    <link rel="stylesheet" href="./resources/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./resources/css/styles.css">
+
+    <title>Contact Us</title>
+</head>
+<body>
+
+    <!-- -----------------------header navbar start----------------------- -->
+    <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand mb-0 h1" href="./index.html">
+            <img src="./resources/images/logos_images/navbar_logo.png" alt="logo" height="30">
+          </a>
+          <div class="d-flex order-lg-1 ml-auto pr-2">
+            <ul class="navbar-nav flex-row">
+              <li class="nav-item mx-2 mx-lg-0">
+                <a class="nav-link" href="#" onclick="checkProfileCLick()" id="loginNavbarModalPop">
+                  <img src="./resources/bootstrap-icons-1.5.0/person-fill.svg" alt="Cart" width="25" height="25"/>  
+                  <span id="loginNavBarDisplay">Login/Register</span></a>
+              </li>
+              <li class="nav-item mx-2 mx-lg-0">
+                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#cartModal" onclick="viewCartbtn()">
+                  <img src="./resources/bootstrap-icons-1.5.0/cart3.svg" alt="Cart" width="25" height="25"/>
+                  <span class="translate-middle badge rounded-pill my-bg-blue-dark cart-items-count">0</span></a>
+              </li>
+            </ul>
+          </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="navbar-brand dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Shop By Category
+                </a>
+                <ul class="dropdown-menu hover-bg-blue" aria-labelledby="navbarDropdown" id="navbarCategoryDropdown">
+                    
+                </ul>
+              </li>
+            </ul>
+            <div class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search Product" aria-label="Search" id="seachBox">
+              <button class="btn btn-outline-primary  my-bg-blue-dark my-color-white" type="button" onclick="searchBtn()">Search</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+    <!-- -----------------------header navbar end------------------------- -->
+
+
+    <div class="container">
+        <h1 class="display-4 text-center p-3">Contact Us</h1>
+        <p class="text-left">
+            To reach our customer service team please email us at: freshkart@gmail.com
+        </p><br>
+        <p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+        <p>XXXXXXXXXXXXX,</p>
+        <p>XXXXXXXXXXXXXXXXXXXX,</p>
+        <p>XXXXXXXXXXX, XXXXXXXXXXX,</p>
+        <p>XXXXXX, XXXXXXX, XXXXXXX</p>
+        <p>Tel: XXXXX-XXXXX</p>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+<!-- -----------------------------------------------checkout Modal start------------------------------------------------------------ -->
+
+<div class="modal fade" id="checkoutModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="checkoutModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen-sm-down">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="checkoutModal">CHECKOUT</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+  
+          <div class="toast top-50 end-0 translate-middle-y w-100 text-white bg-primary border-0 my-bg-blue-dark hide mt-2" id="checkoutToast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+              <div class="toast-body" id="checkoutToastMessage">
+                Hello, world! This is a toast message.
+              </div>
+              <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+          </div>
+  
+          <div class="row g-3">
+  
+            <div class="col-md-6">
+              <label for="checkoutName" class="form-label">Name</label>
+              <input type="text" class="form-control" id="checkoutName" placeholder="Name">
+            </div>
+            <div class="col-md-6">
+              <label for="checkoutMobile" class="form-label">Phone Number</label>
+              <input type="tel" class="form-control" id="checkoutMobile" 
+              placeholder="Phone Number" pattern="[6-9]{1}[0-9]{9}" required>
+            </div>
+            <div class="col-12">
+              <label for="checkoutAddress" class="form-label">Address</label>
+              <input type="text" class="form-control" id="checkoutAddress" placeholder="1234 Main St">
+            </div>
+            
+              <div class="col-4">
+                <label for="chekoutCity" class="form-label">City</label>
+                <input type="text" class="form-control" id="checkoutCity" value="MOGA" disabled>
+              </div>
+            
+            <div class="col-4">
+              <label for="checkoutState" class="form-label">State</label>
+              <input type="text" class="form-control" id="checkoutState" value="PUNJAB" disabled>
+            </div>
+            <div class="col-4">
+              <label for="checkoutPin" class="form-label">Zip</label>
+              <input type="text" class="form-control" id="checkoutPin" value="142001" disabled>
+            </div>
+  
+    
+          </div>
+          
+  
+  
+  
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary btn-sm my-bg-blue-dark my-class-float-right" id="placeOrderBtn" onclick="placeOrder()">Place Order</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- ------------------------------------------------checkout modal end-------------------------------------------------------------- -->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- ----------------------------------------------------cart Modal start---------------------------------------------------- -->
+  <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-centered modal-dialog-scrollable modal-fullscreen-sm-down">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cartModal">CART</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- --------------------row start--------------------- -->
+                <div class="row row-cols-1 row-cols-xl-1 g-4" id="cart-row-table">
+  
+  
+                    <!-- ------col start------ -->
+                    
+                    <!-- ------------col end---------- -->
+                    
+                </div>
+                <!-- -------------------row end------------------------ -->
+  
+                <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+                  <div class="toast align-items-center text-white my-bg-blue-dark" id="cartToast" role="alert" aria-live="assertive" aria-atomic="true">
+                      <div class="d-flex">
+                        <div class="toast-body" id="cartToastMessage">
+                        Hello, world! This is a toast message.
+                        </div>
+                        <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="container">
+                    <span class="my-text-dark-bold-color">Total: <span>&#8377;</span><span id="total-value-cart">0</span></span>
+                    <button type="button" class="btn btn-primary my-bg-blue-dark my-class-float-right" id="checkout-btn" onclick="checkoutClick()" data-bs-dismiss="modal">Checkout</button>
+                </div>
+  
+                <!-- <button type="submit" class="btn btn-primary my-bg-blue-dark">Checkout</button> -->
+            </div>
+        </div>
+    </div>
+  </div>
+  <!-- ----------------------------------------------------cart modal end---------------------------------------------------- -->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- ----------------------------------------------------view Profile start---------------------------------------------------- -->
+  
+  <div class="modal fade" id="profileModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="profileModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="profileModal">PROFILE</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="profileModalClose"></button>
+            </div>
+            <div class="modal-body">
+                    <fieldset id="loggedInNameDisabled">
+                        <div class="form-group mb-4">
+                            <label for="loggedInName">Name</label>
+                            <input type="text" class="form-control" id="loggedInName" placeholder="Name" disabled>
+                        </div>
+                    </fieldset>
+                    <fieldset disabled>
+                        <div class="form-group mb-4">
+                            <label for="loggedInEmail">Email address</label>
+                            <input type="email" class="form-control" id="loggedInEmail"
+                                aria-describedby="loggedInEmailHelp" placeholder="Email">
+                            <small id="loggedInEmailHelp" class="form-text text-muted">We'll never share your email with anyone
+                                else.</small>
+                        </div>
+                    </fieldset>
+                    <fieldset id="loggedInMobileDisabled">
+                        <div class="form-group mb-4">
+                            <label for="loggedInMobile">Phone Number</label>
+                            <input type="tel" class="form-control" id="loggedInMobile" 
+                              placeholder="Phone Number" pattern="[6-9]{1}[0-9]{9}" disabled required>
+                            <small id="loggedInMobileHelp" class="form-text text-muted">We'll never share your phone number with anyone
+                              else.</small>
+                        </div>
+                    </fieldset>
+                    <div class="toast top-50 end-0 translate-middle-y w-100 text-white bg-primary border-0 my-bg-blue-dark hide" id="editProfileToast" role="alert" aria-live="assertive" aria-atomic="true">
+                      <div class="d-flex">
+                        <div class="toast-body" id="editProfileToastMessage">
+                          Hello, world! This is a toast message.
+                        </div>
+                        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                      </div>
+                    </div>
+                    <div class="container">
+                      <p class="text-center"><a href="./viewOrders.html" class="link-info">View Orders</a></p>
+                      <button type="button" class="btn btn-primary btn-sm my-bg-blue-dark" onclick="logout()">Logout</button>
+                        <a href="#" class="link-dark"><span class="my-class-float-right" data-bs-toggle="modal" data-bs-target="#cartModal"
+                            data-bs-dismiss="modal" onclick="viewCartbtn()">Cart <span
+                            class="badge badge-pill badge-primary ml-2 my-bg-blue-dark cart-items-count">0</span></span></a>
+                            
+                    </div>
+                
+            </div>
+            <div class="modal-footer">
+                <div class="container">
+                    <a href="#" class="link-info" data-bs-toggle="modal" data-bs-target="#changePasswordModal"
+                        data-bs-dismiss="modal">Change Password</a>
+                    <button type="button"
+                        class="btn btn-primary btn-sm my-bg-blue-dark my-class-float-right" id="editProfileBtn" onclick="editProfile()">Update Profile</button>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <!-- ----------------------------------------------------view Profile end---------------------------------------------------- -->
+  
+  
+  
+  
+  
+  
+  <!-- ----------------------------------------------------Login/register/forgot password modal start---------------------------------------------------- -->
+  
+    <!-- login modal -->
+  
+  
+    <!-- Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModal" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="loginModal">LOGIN</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            
+              <div class="form-group mb-4">
+                <label for="">Email address</label>
+                <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp"
+                  placeholder="Enter email">
+                <small id="loginEmailHelp" class="form-text text-muted">We'll never share your email with anyone
+                  else.</small>
+              </div>
+              <div class="form-group mb-4">
+                <label for="">Password</label>
+                <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+              </div>
+  
+              
+              <div class="toast top-50 end-0 translate-middle-y w-100 text-white bg-primary border-0 my-bg-blue-dark hide" id="loginToast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                  <div class="toast-body" id="loginToastMessage">
+                    Hello, world! This is a toast message.
+                  </div>
+                  <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+              </div>
+  
+              <div class="form-group text-center">
+                <a href="#" class="link-info" data-bs-toggle="modal" data-bs-target="#registerModal"
+                  data-bs-dismiss="modal">Not a Member? Register</a>
+              </div>
+  
+            
+          </div>
+          <div class="modal-footer">
+            <div class="container">
+              <a href="#" class="link-info" data-bs-toggle="modal" data-bs-target="#forgotPasswordModal"
+                data-bs-dismiss="modal">Forgot Password?</a>
+              <button type="button" class="btn btn-primary btn-sm my-bg-blue-dark my-class-float-right" onclick="loginUser()">Login</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  
+  
+    <!-- signup modal -->
+  
+  
+    <div class="modal fade" id="registerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="registerModal" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen-sm-down">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="registerModal">REGISTER</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="toast mt-5 top-50 end-0 translate-middle-y w-100 text-white bg-primary border-0 my-bg-blue-dark hide" id="signUpToast" role="alert" aria-live="assertive" aria-atomic="true">
+              <div class="d-flex">
+                <div class="toast-body" id="signUpToastMessage">
+                  Hello, world! This is a toast message.
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+              </div>
+            </div>
+              <div class="form-group mb-4">
+                <label for="signupName">Name</label>
+                <input type="text" class="form-control" id="signupName" placeholder="Enter Name">
+              </div>
+              <div class="form-group mb-4">
+                <label for="signUpEmail">Email address</label>
+                <input type="email" class="form-control" id="signUpEmail" aria-describedby="emailHelp"
+                  placeholder="Enter email">
+                <small id="signUpEmailHelp" class="form-text text-muted">We'll never share your email with anyone
+                  else.</small>
+              </div>
+              <div class="form-group mb-4">
+                <label for="signUpPhoneNumber">Phone Number</label>
+                <input type="tel" class="form-control" id="signUpPhoneNumber" 
+                  placeholder="Phone Number" pattern="[6-9]{1}[0-9]{9}" required>
+                <small id="signUpPhoneNumberHelp" class="form-text text-muted">We'll never share your phone number with anyone
+                  else.</small>
+              </div>
+              <div class="form-group mb-4">
+                <label for="signUpPassword">Password</label>
+                <input type="password" class="form-control" id="signUpPassword" placeholder="Password">
+                <div id="signUpPasswordHelp" class="form-text">
+                  Your password must be minimum 8 characters long.
+                </div>
+              </div>
+              <div class="form-group mb-4">
+                <label for="signUpPasswordConfirm">Confirm Password</label>
+                <input type="password" class="form-control" id="signUpPasswordConfirm" placeholder="Confirm Password">
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="signUpAgree">
+                <label class="form-check-label" for="signUpAgree"><a href="./terms&conditions.html" class="link-info">Agree To Terms & Conditions</a></label>
+              </div>
+              
+            
+          </div>
+          <div class="modal-footer">
+            <div class="container">
+              <a href="#" class="link-info" data-bs-toggle="modal" data-bs-target="#loginModal"
+                  data-bs-dismiss="modal">Already a Member? Login</a>
+              <button type="button" class="btn btn-primary btn-sm my-bg-blue-dark my-class-float-right" id="signUpSubmit" onclick="signUpUser()">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="modal fade" id="otpModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="otpModal" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen-sm-down">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="otpModal">OTP</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <!-- <form> -->
+              
+  
+              <div class="form-group mb-4">
+                <label for="signUpOtp">OTP</label>
+                <input type="Number" class="form-control" id="signUpOtp" 
+                  placeholder="OTP" pattern="[6-9]{1}[0-9]{9}" required>
+                <small id="signUpOtpHelp" class="form-text text-muted">A QR COde is sent to your respecitve mail. Scan it using Google Authenticator to get the OTP. If you didn't receive any Email kindly try after sometime.</small>
+              </div>
+  
+              <div class="toast top-50 end-0 translate-middle-y w-100 text-white bg-primary border-0 my-bg-blue-dark hide" id="otpSignUpToast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                  <div class="toast-body" id="otpSignUpToastMessage">
+                    Hello, world! This is a toast message.
+                  </div>
+                  <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+              </div>
+              
+  
+            <!-- </form> -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary my-bg-blue-dark my-class-float-right" id="submitOtpSignUp">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- forgotPassword modal -->
+  
+  
+    <div class="modal fade" id="forgotPasswordModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="forgotPasswordModal"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="forgotPasswordModal">FORGOT PASSWORD</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <!-- <form> -->
+              <div class="form-group mb-4">
+                <label for="">Email address</label>
+                <input type="email" class="form-control" id="forgotPasswordEmail" aria-describedby="forgotPasswordEmailHelp"
+                  placeholder="Enter email">
+                <small id="forgotPasswordEmailHelp" class="form-text text-muted">We'll never share your email with anyone
+                  else.</small>
+              </div>
+              <div class="form-group mb-4">
+                <label for="forgotNewPassword">New Password</label>
+                <input type="password" class="form-control" id="forgotNewPassword" placeholder="New Password">
+                <div id="forgotNewPasswordHelp" class="form-text">
+                  Your password must be minimum 8 characters long.
+                </div>
+              </div>
+              <div class="form-group mb-4">
+                <label for="forgotNewPasswordConfirm">Confirm New Password</label>
+                <input type="password" class="form-control" id="forgotNewPasswordConfirm" placeholder="Confirm New Password">
+              </div>
+                <div class="form-group mb-4">
+                  <label for="forgotPasswordOtp">OTP</label>
+                  <input type="text" id="forgotPasswordOtp" class="form-control" placeholder="OTP">
+                  <div id="forgotPasswordOtpHelp" class="form-text">
+                    Use the Google Authenticator OTP. If you Lost the key click on resend OTP. If you still didn't receive the OTP, Please try again after sometime.
+                  </div>
+                </div>
+                <div class="toast top-50 end-0 translate-middle-y w-100 text-white bg-primary border-0 my-bg-blue-dark hide" id="forgotPasswordToast" role="alert" aria-live="assertive" aria-atomic="true">
+                  <div class="d-flex">
+                    <div class="toast-body" id="forgotPasswordToastMessage">
+                      Hello, world! This is a toast message.
+                    </div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                  </div>
+                </div>
+          </div>
+          <div class="modal-footer">
+            <div class="container">
+              <button type="button" class="btn btn-primary  btn-sm my-bg-blue-dark" id="resendForgotPasswordOtpBtn" onclick="resendforgotPasswordOtp()">Resend OTP</button>
+              <button type="button" class="btn btn-primary  btn-sm my-bg-blue-dark my-class-float-right" onclick="forgotPassword()">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- change Password Modal -->
+    <div class="modal fade" id="changePasswordModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="changePasswordModal"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="changePasswordModal">CHANGE PASSWORD</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                    <div class="form-group mb-4">
+                        <label for="changePasswordOld">Old Password</label>
+                        <input type="password" class="form-control" id="changePasswordOld"
+                            placeholder="Old Password">
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="changePasswordNew">New Password</label>
+                        <input type="password" class="form-control" id="changePasswordNew"
+                            placeholder="New Password">
+                        <div id="changePasswordNewHelp" class="form-text">
+                          Your password must be minimum 8 characters long.
+                        </div>
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="changePasswordNewConfirm">Confirm New Password</label>
+                        <input type="password" class="form-control" id="changePasswordNewConfirm"
+                            placeholder="Confirm New Password">
+                    </div>
+  
+                    <div class="toast top-50 end-0 translate-middle-y w-100 text-white bg-primary border-0 my-bg-blue-dark hide" id="chnagePasswordToast" role="alert" aria-live="assertive" aria-atomic="true">
+                      <div class="d-flex">
+                        <div class="toast-body" id="changePasswordToastMessage">
+                          Hello, world! This is a toast message.
+                        </div>
+                        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                      </div>
+                    </div>
+            </div>
+            <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary btn-sm my-bg-blue-dark my-class-float-right" onclick="changePassword()">Confirm</button>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  <!-- ----------------------------------------------------Login/register/forgot password modal end---------------------------------------------------- -->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- ----------------------------------------------------footer start---------------------------------------------------- -->
+  
+      <!-- Footer -->
+      <footer class="text-center text-lg-start text-muted bg-light sticky-bottom">
+        <div>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-google"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+        <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+  
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <i class="fas fa-gem me-3">FreshKart</i>
+                        </h6>
+                        <p>
+                          FreshKart.com (Innovative Retail Concepts Private Limited) is online food and grocery store. 
+                          With over 500 products and over a 100 brands in our catalogue you will find everything you are looking for.
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+  
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4" id="footerCategories">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Categories
+                        </h6>
+                    </div>
+                    <!-- Grid column -->
+  
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Useful links
+                        </h6>
+                        <p>
+                            <a href="./aboutus.html" class="link-dark">About Us</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="link-dark">Contact Us</a>
+                        </p>
+                        <p>
+                            <a href="./viewOrders.html" class="link-dark">Orders</a>
+                        </p>
+                        <p>
+                            <a href="./terms&conditions.html" class="link-dark">T&C</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+  
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Contact
+                        </h6>
+                        <p><i class="fas fa-home me-3"></i> XXXX, XXXXXX XXXXXX, XXXXX</p>
+                        <p>
+                            <i class="fas fa-envelope me-3"></i>
+                            freshkart@gmail.com
+                        </p>
+                        <p><i class="fas fa-phone me-3"></i> + 91 XXXXX XXXXX</p>
+                        <p><i class="fas fa-print me-3"></i> + 91 XXXXX XXXXX</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+  
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2021 Copyright:
+            <a class="text-reset fw-bold" href="./index.html">FreshKart.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+      <!-- Footer -->
+    <!-- ----------------------------------------------------footer end---------------------------------------------------- -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <script src="./resources/jquery/jquery.min.js"></script>
+      <script src="./resources/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+      <script src="./resources/js/src.js"></script>
+  
+  
+  
+  
+  </body>
+  </html>
