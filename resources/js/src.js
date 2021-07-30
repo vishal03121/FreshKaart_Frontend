@@ -818,7 +818,7 @@ const loadProductsPage = () => {
             div.className = "col";
             div.innerHTML = `
           <div class="card">
-              <a href="#" data-bs-toggle="modal" data-bs-target="#productModal"><img
+              <a data-bs-toggle="modal" data-bs-target="#productModal"><img
                       src="https://freshkartapi.herokuapp.com${prod.imageUrl[0]}" onclick='getProductModalData("${prod._id}")'
                       class="card-img-top zoom" alt="..."></a>
                     <div class="card-body text-center">
@@ -945,7 +945,7 @@ const pagination = (toPage) => {
           div.className = "col";
           div.innerHTML = `
           <div class="card">
-              <a href="#" data-bs-toggle="modal" data-bs-target="#productModal"><img
+              <a data-bs-toggle="modal" data-bs-target="#productModal"><img
                       src="https://freshkartapi.herokuapp.com${prod.imageUrl[0]}" onclick='getProductModalData("${prod._id}")'
                       class="card-img-top zoom" alt="..."></a>
                     <div class="card-body text-center">
@@ -1447,11 +1447,11 @@ const filterOrders = () => {
             if(order.status==="delivered" || order.status==="shipped") cardBodyClass +="-final";
             else if(order.status==="confirmed"){
               cardBodyClass +="-confirmed";
-              cancelBtn = `<a href="#" class="btn btn-danger btn-sm my-bg-red-warn my-class-float-right" onclick="cancelOrder('${order._id}')">Cancel Order</a>'`
+              cancelBtn = `<a class="btn btn-danger btn-sm my-bg-red-warn my-class-float-right" onclick="cancelOrder('${order._id}')">Cancel Order</a>'`
             }
             else if(order.status==="pending"){
               cardBodyClass +="-pending";
-              cancelBtn = `<a href="#" class="btn btn-danger btn-sm my-bg-red-warn my-class-float-right" onclick="cancelOrder('${order._id}')">Cancel Order</a>'`
+              cancelBtn = `<a class="btn btn-danger btn-sm my-bg-red-warn my-class-float-right" onclick="cancelOrder('${order._id}')">Cancel Order</a>'`
             }
             else {
               cardBodyClass +="-canceled";
@@ -1462,7 +1462,7 @@ const filterOrders = () => {
                 <div class="card">
                     <div class="card-header">
                       <span>Order ID: ${order._id}</span>
-                      <a href="#" class="btn btn-primary btn-sm my-bg-blue-dark my-class-float-right" onclick="viewOrder('${order._id}')">View Order</a>
+                      <a class="btn btn-primary btn-sm my-bg-blue-dark my-class-float-right" onclick="viewOrder('${order._id}')">View Order</a>
                     </div>
                     <div class="card-body ${cardBodyClass}">
                       <p class="card-text my-0"><span class="my-text-dark-bold-color">Name: </span>${order.name}</p>
@@ -1533,11 +1533,11 @@ const showOrderInfo = (order) => {
   if(order.status==="delivered" || order.status==="shipped") cardBodyClass +="-final";
   else if(order.status==="confirmed"){
     cardBodyClass +="-confirmed";
-    cancelBtn = `<a href="#" class="btn btn-danger btn-sm my-bg-red-warn my-class-float-right" onclick="cancelOrder('${order._id}')">Cancel Order</a>'`
+    cancelBtn = `<a class="btn btn-danger btn-sm my-bg-red-warn my-class-float-right" onclick="cancelOrder('${order._id}')">Cancel Order</a>'`
   }
   else if(order.status==="pending"){
     cardBodyClass +="-pending";
-    cancelBtn = `<a href="#" class="btn btn-danger btn-sm my-bg-red-warn my-class-float-right" onclick="cancelOrder('${order._id}')">Cancel Order</a>'`
+    cancelBtn = `<a class="btn btn-danger btn-sm my-bg-red-warn my-class-float-right" onclick="cancelOrder('${order._id}')">Cancel Order</a>'`
   }
   else {
     cardBodyClass +="-canceled";
@@ -1822,11 +1822,11 @@ const loadViewOrdersPage = () => {
             if(order.status==="delivered" || order.status==="shipped") cardBodyClass +="-final";
             else if(order.status==="confirmed"){
               cardBodyClass +="-confirmed";
-              cancelBtn = `<a href="#" class="btn btn-danger btn-sm my-bg-red-warn my-class-float-right" onclick="cancelOrder('${order._id}')">Cancel Order</a>'`
+              cancelBtn = `<a class="btn btn-danger btn-sm my-bg-red-warn my-class-float-right" onclick="cancelOrder('${order._id}')">Cancel Order</a>'`
             }
             else if(order.status==="pending"){
               cardBodyClass +="-pending";
-              cancelBtn = `<a href="#" class="btn btn-danger btn-sm my-bg-red-warn my-class-float-right" onclick="cancelOrder('${order._id}')">Cancel Order</a>'`
+              cancelBtn = `<a class="btn btn-danger btn-sm my-bg-red-warn my-class-float-right" onclick="cancelOrder('${order._id}')">Cancel Order</a>'`
             }
             else {
               cardBodyClass +="-canceled";
@@ -1837,7 +1837,7 @@ const loadViewOrdersPage = () => {
                 <div class="card">
                     <div class="card-header">
                       <span>Order ID: ${order._id}</span>
-                      <a href="#" class="btn btn-primary btn-sm my-bg-blue-dark my-class-float-right" onclick="viewOrder('${order._id}')">View Order</a>
+                      <a class="btn btn-primary btn-sm my-bg-blue-dark my-class-float-right" onclick="viewOrder('${order._id}')">View Order</a>
                     </div>
                     <div class="card-body ${cardBodyClass}">
                       <p class="card-text my-0"><span class="my-text-dark-bold-color">Name: </span>${order.name}</p>
@@ -1976,7 +1976,7 @@ const loadSearchPage = () => {
             div.className = "col";
             div.innerHTML = `
           <div class="card">
-              <a href="#" data-bs-toggle="modal" data-bs-target="#productModal"><img
+              <a data-bs-toggle="modal" data-bs-target="#productModal"><img
                       src="https://freshkartapi.herokuapp.com${prod.imageUrl[0]}" onclick='getProductModalData("${prod._id}")'
                       class="card-img-top zoom" alt="..."></a>
                     <div class="card-body text-center">

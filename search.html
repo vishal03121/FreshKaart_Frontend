@@ -22,12 +22,12 @@
           <div class="d-flex order-lg-1 ml-auto pr-2">
             <ul class="navbar-nav flex-row">
               <li class="nav-item mx-2 mx-lg-0">
-                <a class="nav-link" href="#" onclick="checkProfileCLick()" id="loginNavbarModalPop">
+                <a class="nav-link"  onclick="checkProfileCLick()" id="loginNavbarModalPop">
                   <img src="./resources/bootstrap-icons-1.5.0/person-fill.svg" alt="Cart" width="25" height="25"/>  
                   <span id="loginNavBarDisplay">Login/Register</span></a>
               </li>
               <li class="nav-item mx-2 mx-lg-0">
-                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#cartModal" onclick="viewCartbtn()">
+                <a class="nav-link"  data-bs-toggle="modal" data-bs-target="#cartModal" onclick="viewCartbtn()">
                   <img src="./resources/bootstrap-icons-1.5.0/cart3.svg" alt="Cart" width="25" height="25"/>
                   <span class="translate-middle badge rounded-pill my-bg-blue-dark cart-items-count">0</span></a>
               </li>
@@ -40,7 +40,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="navbar-brand dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-bs-toggle="dropdown"
                   aria-expanded="false">
                   Shop By Category
                 </a>
@@ -95,7 +95,7 @@
                     <small>OPTIONS</small>
                 </li>
                 <!-- /END Separator -->
-                <a href="#" class="list-group-item list-group-item-action" onclick="sideBarViewProfile()">
+                <a class="list-group-item list-group-item-action" onclick="sideBarViewProfile()">
                     <div class="d-flex w-100 justify-content-start align-items-center">
                         <span class="fa fa-calendar fa-fw mr-3"></span>
                         <span class="">View Profile</span>
@@ -107,7 +107,7 @@
                         <span class="">View Orders</span>
                     </div>
                 </a>
-                <a href="#" data-bs-toggle="modal" data-bs-target="#cartModal" onclick="viewCartbtn()" class="list-group-item list-group-item-action">
+                <a data-bs-toggle="modal" data-bs-target="#cartModal" onclick="viewCartbtn()" class="list-group-item list-group-item-action">
                     <div class="d-flex w-100 justify-content-start align-items-center">
                         <span class="fa fa-envelope-o fa-fw mr-3"></span>
                         <span class="">Cart <span
@@ -492,7 +492,7 @@
                   <div class="container">
                     <p class="text-center"><a href="./viewOrders.html" class="link-info">View Orders</a></p>
                     <button type="button" class="btn btn-primary btn-sm my-bg-blue-dark" onclick="logout()">Logout</button>
-                      <a href="#" class="link-dark"><span class="my-class-float-right" data-bs-toggle="modal" data-bs-target="#cartModal"
+                      <a class="link-dark"><span class="my-class-float-right" data-bs-toggle="modal" data-bs-target="#cartModal"
                           data-bs-dismiss="modal" onclick="viewCartbtn()">Cart <span
                           class="badge badge-pill badge-primary ml-2 my-bg-blue-dark cart-items-count">0</span></span></a>
                           
@@ -501,7 +501,7 @@
           </div>
           <div class="modal-footer">
               <div class="container">
-                  <a href="#" class="link-info" data-bs-toggle="modal" data-bs-target="#changePasswordModal"
+                  <a class="link-info" data-bs-toggle="modal" data-bs-target="#changePasswordModal"
                       data-bs-dismiss="modal">Change Password</a>
                   <button type="button"
                       class="btn btn-primary btn-sm my-bg-blue-dark my-class-float-right" id="editProfileBtn" onclick="editProfile()">Update Profile</button>
@@ -555,7 +555,7 @@
             </div>
 
             <div class="form-group text-center">
-              <a href="#" class="link-info" data-bs-toggle="modal" data-bs-target="#registerModal"
+              <a class="link-info" data-bs-toggle="modal" data-bs-target="#registerModal"
                 data-bs-dismiss="modal">Not a Member? Register</a>
             </div>
 
@@ -563,7 +563,7 @@
         </div>
         <div class="modal-footer">
           <div class="container">
-            <a href="#" class="link-info" data-bs-toggle="modal" data-bs-target="#forgotPasswordModal"
+            <a class="link-info" data-bs-toggle="modal" data-bs-target="#forgotPasswordModal"
               data-bs-dismiss="modal">Forgot Password?</a>
             <button type="button" class="btn btn-primary btn-sm my-bg-blue-dark my-class-float-right" onclick="loginUser()">Login</button>
           </div>
@@ -630,7 +630,7 @@
         </div>
         <div class="modal-footer">
           <div class="container">
-            <a href="#" class="link-info" data-bs-toggle="modal" data-bs-target="#loginModal"
+            <a class="link-info" data-bs-toggle="modal" data-bs-target="#loginModal"
                 data-bs-dismiss="modal">Already a Member? Login</a>
             <button type="button" class="btn btn-primary btn-sm my-bg-blue-dark my-class-float-right" id="signUpSubmit" onclick="signUpUser()">Submit</button>
           </div>
