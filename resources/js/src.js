@@ -1404,7 +1404,7 @@ const filterOrders = () => {
 
   if(userId && token){
     $("#viewOrderRow").empty()
-    if(filter=="view_all") loadViewOrdersPage();
+    if(filter=="view_all") location.reload();
     else{
       const div = document.createElement("div");
 
