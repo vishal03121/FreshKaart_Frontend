@@ -1371,7 +1371,7 @@ const placeOrder = () => {
             $("#checkoutToastMessage").html(result.message);
             $("#checkoutToast").toast("show");
             setTimeout(() => {
-              location.reload();
+              location.replace("/viewOrders.html");
             }, 2000);
           } else if (status === 500) {
             logout();
