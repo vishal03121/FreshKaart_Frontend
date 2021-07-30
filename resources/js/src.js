@@ -1523,6 +1523,48 @@ const checkoutClick = () => {
   }
 }
 
+const showOrderInfo = (order) => {
+  const div = document.createElement("div");
+  div.className="col";
+  const d = new Date( order.createdAt );
+  const date =  d.toLocaleString();
+  let cancelBtn="";
+  let cardBodyClass = "my-class-orders-color"
+  if(order.status==="delivered" || order.status==="shipped") cardBodyClass +="-final";
+  else if(order.status==="confirmed"){
+    cardBodyClass +="-confirmed";
+    cancelBtn = `<a href="#" class="btn btn-danger btn-sm my-bg-red-warn my-class-float-right" onclick="cancelOrder('${order._id}')">Cancel Order</a>'`
+  }
+  else if(order.status==="pending"){
+    cardBodyClass +="-pending";
+    cancelBtn = `<a href="#" class="btn btn-danger btn-sm my-bg-red-warn my-class-float-right" onclick="cancelOrder('${order._id}')">Cancel Order</a>'`
+  }
+  else {
+    cardBodyClass +="-canceled";
+  }
+  div.innerHTML = `
+      <div class="card">
+          <div class="card-header">
+            <span>Order Details</span>
+          </div>
+          <div class="card-body ${cardBodyClass}">
+            <p class="card-text my-0"><span class="my-text-dark-bold-color">Name: </span>${order.name}</p>
+            <p class="card-text my-0"><span class="my-text-dark-bold-color">Phone Number: </span>  ${order.mobile}</p>
+            <p class="card-text my-0"><span class="my-text-dark-bold-color">Address: </span>  ${order.address}</p>
+            <p class="card-text my-0"><span class="my-text-dark-bold-color">Status: </span>${capitalize(order.status)}</p>
+            <p class="card-text my-0"><span class="my-text-dark-bold-color">Order Value:</span> <span>&#8377;</span>${order.orderValue} </p>
+            <p class="card-text my-0"><span class="my-text-dark-bold-color">Payment Method: </span>${order.paymentMode}</p>
+            
+          </div>
+          <div class="card-footer text-muted">
+            Order Date: ${date}
+            ${cancelBtn}
+          </div>
+      </div>
+  `;
+  document.getElementById("viewSingleOrderRow").appendChild(div);
+};
+
 const viewOrder = (orderId) => {
   const token = localStorage.getItem("token");
   const userId = localStorage.getItem("userId");
@@ -1544,6 +1586,7 @@ const viewOrder = (orderId) => {
             $("#viewOrderId").html("Order Id: "+result.order._id)
             const d = new Date( result.order.createdAt );
             const date =  d.toLocaleString();
+            showOrderInfo(result.order);
             result.order.products.forEach((product) => {
               const div = document.createElement("div");
               div.className="col";
