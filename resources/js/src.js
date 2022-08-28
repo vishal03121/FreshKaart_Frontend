@@ -156,7 +156,7 @@ const validateAddress = (address, id) => {
 
 // --------------------- to load categories dropdown in navbar start----------------------------
 const loadNavbarCategories = () => {
-  fetch("https://freshkartapi.herokuapp.com/productCategories")
+  fetch("https://freshkartapi.vercel.app/productCategories")
     .then((res) => res.json())
     .then((resData) => {
       let prodCatId = localStorage.getItem("prodCatId");
@@ -199,7 +199,7 @@ const loadNavbarLogin = () => {
 
   if (token && userId) {
     let status;
-    fetch("https://freshkartapi.herokuapp.com/user/" + userId,{
+    fetch("https://freshkartapi.vercel.app/user/" + userId,{
       headers: {
         "Content-type": "application/json",
         "Authorization": "Bearer " + token
@@ -249,7 +249,7 @@ const checkProfileCLick = () => {
 
 // --------------------- to load categories index page start----------------------------
 const loadIndexPage = () => {
-  fetch("https://freshkartapi.herokuapp.com/productCategories")
+  fetch("https://freshkartapi.vercel.app/productCategories")
     .then((res) => res.json())
     .then((resData) => {
       if (resData.categories.length > 0) {
@@ -260,7 +260,7 @@ const loadIndexPage = () => {
           <div class="col">
             <a href="products.html" class="link-color-black" onclick="setProdCatId('${cat._id}')">
               <div class="card">
-                <img src="https://freshkartapi.herokuapp.com${cat.imageUrl}" class="card-img-top zoom"
+                <img src="https://freshkartapi.vercel.app${cat.imageUrl}" class="card-img-top zoom"
                   alt="">
                 <div class="card-body">
                   <h5 class="card-title text-center">${cat.category}</h5>
@@ -319,7 +319,7 @@ const signUpUser = () => {
   }
   if (valid.response) {
     let status;
-    fetch("https://freshkartapi.herokuapp.com/signup", {
+    fetch("https://freshkartapi.vercel.app/signup", {
       method: "PUT",
       body: JSON.stringify({
         email: email,
@@ -368,7 +368,7 @@ const submitOTPsignUp = (signUpId) => {
 
   if (isValidOtp.response) {
     let status;
-    fetch("https://freshkartapi.herokuapp.com/validateSignUp", {
+    fetch("https://freshkartapi.vercel.app/validateSignUp", {
       method: "PUT",
       body: JSON.stringify({
         userId: signUpId,
@@ -416,7 +416,7 @@ const editProfileModalClosed = () => {
   const userId = localStorage.getItem("userId");
   if (token && userId) {
     let status;
-    fetch("https://freshkartapi.herokuapp.com/user/" + userId,{
+    fetch("https://freshkartapi.vercel.app/user/" + userId,{
       headers: {
         "Content-type": "application/json",
         "Authorization": "Bearer " + token
@@ -474,7 +474,7 @@ const updateProfile = () => {
     }
     if (valid.response) {
       let status;
-      fetch("https://freshkartapi.herokuapp.com/updateUserProfile", {
+      fetch("https://freshkartapi.vercel.app/updateUserProfile", {
         method: "PUT",
         body: JSON.stringify({
           userId: userId,
@@ -536,7 +536,7 @@ const changePassword = () => {
     }
     if (valid.response) {
       let status;
-      fetch("https://freshkartapi.herokuapp.com/changePassword", {
+      fetch("https://freshkartapi.vercel.app/changePassword", {
         method: "PUT",
         body: JSON.stringify({
           userId: userId,
@@ -585,7 +585,7 @@ const resendforgotPasswordOtp = () => {
   const valid = validateEmail(email, "forgotPasswordEmail");
   if (valid.response) {
     let status;
-    fetch("https://freshkartapi.herokuapp.com/resendOtp", {
+    fetch("https://freshkartapi.vercel.app/resendOtp", {
       method: "PUT",
       body: JSON.stringify({
         email: email,
@@ -630,7 +630,7 @@ const forgotPassword = () => {
   }
   if(valid.response){
     let status;
-    fetch("https://freshkartapi.herokuapp.com/forgotPassword", {
+    fetch("https://freshkartapi.vercel.app/forgotPassword", {
       method: "PUT",
       body: JSON.stringify({
         email: email,
@@ -679,7 +679,7 @@ const loginUser = () => {
   }
   if (valid.response) {
     let status;
-    fetch("https://freshkartapi.herokuapp.com/login", {
+    fetch("https://freshkartapi.vercel.app/login", {
       method: "POST",
       body: JSON.stringify({
         email: email,
@@ -719,7 +719,7 @@ const loginUser = () => {
 
 // --------------------- to load categories sidebar start----------------------------
 const loadProductsPage = () => {
-  fetch("https://freshkartapi.herokuapp.com/productCategories")
+  fetch("https://freshkartapi.vercel.app/productCategories")
     .then((res) => res.json())
     .then((resData) => {
       let prodCatId = localStorage.getItem("prodCatId");
@@ -767,7 +767,7 @@ const loadProductsPage = () => {
     }, 4000);
   } else {
     fetch(
-      "https://freshkartapi.herokuapp.com/products/" +
+      "https://freshkartapi.vercel.app/products/" +
         prodCatId +
         "?page=" +
         state.currentPage
@@ -819,7 +819,7 @@ const loadProductsPage = () => {
             div.innerHTML = `
           <div class="card">
               <a data-bs-toggle="modal" data-bs-target="#productModal"><img
-                      src="https://freshkartapi.herokuapp.com${prod.imageUrl[0]}" onclick='getProductModalData("${prod._id}")'
+                      src="https://freshkartapi.vercel.app${prod.imageUrl[0]}" onclick='getProductModalData("${prod._id}")'
                       class="card-img-top zoom" alt="..."></a>
                     <div class="card-body text-center">
               <h5 class="card-title">${prod.name}</h5>
@@ -903,7 +903,7 @@ const pagination = (toPage) => {
   state.currentPage = state.currentPage + toPage;
   const prodCatId = localStorage.getItem("prodCatId");
   fetch(
-    "https://freshkartapi.herokuapp.com/products/" + prodCatId + "?page=" + state.currentPage
+    "https://freshkartapi.vercel.app/products/" + prodCatId + "?page=" + state.currentPage
   )
     .then((res) => res.json())
     .then((resData) => {
@@ -946,7 +946,7 @@ const pagination = (toPage) => {
           div.innerHTML = `
           <div class="card">
               <a data-bs-toggle="modal" data-bs-target="#productModal"><img
-                      src="https://freshkartapi.herokuapp.com${prod.imageUrl[0]}" onclick='getProductModalData("${prod._id}")'
+                      src="https://freshkartapi.vercel.app${prod.imageUrl[0]}" onclick='getProductModalData("${prod._id}")'
                       class="card-img-top zoom" alt="..."></a>
                     <div class="card-body text-center">
               <h5 class="card-title">${prod.name}</h5>
@@ -988,7 +988,7 @@ const setProdCatId = (prodCatId) => {
 
 // --------------------- to load categories in footer start----------------------------
 const loadFooterCategories = () => {
-  fetch("https://freshkartapi.herokuapp.com/productCategories")
+  fetch("https://freshkartapi.vercel.app/productCategories")
     .then((res) => res.json())
     .then((resData) => {
       for (let i = 0; i < 3 && i < resData.categories.length; i++) {
@@ -1027,7 +1027,7 @@ const SidebarCollapse = () => {
 // --------------------------------------fetching product data for product view modal---------------------------
 const getProductModalData = (prodId) => {
   $("#productToastInside").toast("hide");
-  fetch("https://freshkartapi.herokuapp.com/product/" + prodId)
+  fetch("https://freshkartapi.vercel.app/product/" + prodId)
     .then((res) => res.json())
     .then((resData) => {
       document.getElementById("productModal-title").innerHTML =
@@ -1042,11 +1042,11 @@ const getProductModalData = (prodId) => {
         resData.product.ourPrice;
 
       document.getElementById("prod-img-0").src =
-        "https://freshkartapi.herokuapp.com" + resData.product.imageUrl[0];
+        "https://freshkartapi.vercel.app" + resData.product.imageUrl[0];
       document.getElementById("prod-img-1").src =
-        "https://freshkartapi.herokuapp.com" + resData.product.imageUrl[1];
+        "https://freshkartapi.vercel.app" + resData.product.imageUrl[1];
       document.getElementById("prod-img-2").src =
-        "https://freshkartapi.herokuapp.com" + resData.product.imageUrl[2];
+        "https://freshkartapi.vercel.app" + resData.product.imageUrl[2];
 
       document
         .getElementById("add-to-cart-btn")
@@ -1078,7 +1078,7 @@ const userId = localStorage.getItem("userId");
   
   $("#productToastMessage"+toastInside).html("-");
   let status;
-  fetch("https://freshkartapi.herokuapp.com/checkProduct/" + prodId+'/'+qty)
+  fetch("https://freshkartapi.vercel.app/checkProduct/" + prodId+'/'+qty)
     .then((res) =>{
       status=res.status;
       return res.json();
@@ -1088,7 +1088,7 @@ const userId = localStorage.getItem("userId");
         if(token && userId){
 
           let status;
-          fetch("https://freshkartapi.herokuapp.com/addProductToCart", {
+          fetch("https://freshkartapi.vercel.app/addProductToCart", {
             method: "PUT",
             body: JSON.stringify({
               userId: userId,
@@ -1200,7 +1200,7 @@ const viewCartbtn = () => {
   } else {
     $("#checkout-btn").removeClass("disabled");
     cart.products.forEach((prod) => {
-      fetch("https://freshkartapi.herokuapp.com/product/" + prod.productId)
+      fetch("https://freshkartapi.vercel.app/product/" + prod.productId)
         .then((res) => res.json())
         .then((resData) => {
           const div = document.createElement("div");
@@ -1214,7 +1214,7 @@ const viewCartbtn = () => {
                     )})'></button></span>
                 <div class="row row-cols-1 g-0">
                     <div class="col-md-4">
-                        <img src="https://freshkartapi.herokuapp.com${resData.product.imageUrl[0]}"
+                        <img src="https://freshkartapi.vercel.app${resData.product.imageUrl[0]}"
                         class="img-fluid rounded-start" alt="...">
                     </div>
                 
@@ -1262,7 +1262,7 @@ const removeCartItem = (prodId) => {
 
   if(token && userId){
     let status;
-      fetch("https://freshkartapi.herokuapp.com/removeFromCart", {
+      fetch("https://freshkartapi.vercel.app/removeFromCart", {
         method: "PUT",
         body: JSON.stringify({
           userId: userId,
@@ -1348,7 +1348,7 @@ const placeOrder = () => {
     }
     if (valid.response) {
       let status;
-      fetch("https://freshkartapi.herokuapp.com/placeOrder", {
+      fetch("https://freshkartapi.vercel.app/placeOrder", {
         method: "PUT",
         body: JSON.stringify({
           userId: userId,
@@ -1424,7 +1424,7 @@ const filterOrders = () => {
 
 
       let status;
-      fetch("https://freshkartapi.herokuapp.com/ordersWithStatus" +"?userId="+userId +"&status="+filter,{
+      fetch("https://freshkartapi.vercel.app/ordersWithStatus" +"?userId="+userId +"&status="+filter,{
         headers: {
           "Content-type": "application/json",
           Authorization: "Bearer " + token,
@@ -1571,7 +1571,7 @@ const viewOrder = (orderId) => {
   if(token && userId){
     $("#viewSingleOrderRow").empty();
     let status;
-        fetch("https://freshkartapi.herokuapp.com/viewOrder" +"/"+orderId,{
+        fetch("https://freshkartapi.vercel.app/viewOrder" +"/"+orderId,{
           headers: {
             "Content-type": "application/json",
             Authorization: "Bearer " + token,
@@ -1594,7 +1594,7 @@ const viewOrder = (orderId) => {
               <div class="card mb-3">
               <div class="row row-cols-1 g-0">
                   <div class="col-md-4">
-                      <img src="https://freshkartapi.herokuapp.com${product.imageUrl}"
+                      <img src="https://freshkartapi.vercel.app${product.imageUrl}"
                       class="img-fluid rounded-start" alt="...">
                   </div>
               
@@ -1637,7 +1637,7 @@ const resendCancelOrderOtp = () => {
   const userId = localStorage.getItem("userId");
   if(token && userId){
     let status;
-    fetch("https://freshkartapi.herokuapp.com/resendOtp/" +userId, {
+    fetch("https://freshkartapi.vercel.app/resendOtp/" +userId, {
         headers: {
           "Content-type": "application/json",
           Authorization: "Bearer " + token,
@@ -1675,7 +1675,7 @@ const confirmCancel = (orderId) => {
     let valid = validateOtp(otp, "cancelOrderOtp");
     if(valid.response){
       let status;
-      fetch("https://freshkartapi.herokuapp.com/cancelOrder",{
+      fetch("https://freshkartapi.vercel.app/cancelOrder",{
         method: "PUT",
         body: JSON.stringify({
           orderId: orderId,
@@ -1729,7 +1729,7 @@ const capitalize = (word) => {
 }
 
 const loadViewOrdersPage = () => {
-  fetch("https://freshkartapi.herokuapp.com/productCategories")
+  fetch("https://freshkartapi.vercel.app/productCategories")
     .then((res) => res.json())
     .then((resData) => {
       let prodCatId = localStorage.getItem("prodCatId");
@@ -1788,7 +1788,7 @@ const loadViewOrdersPage = () => {
 
 
       let status;
-      fetch("https://freshkartapi.herokuapp.com/orders" +"?userId="+userId,{
+      fetch("https://freshkartapi.vercel.app/orders" +"?userId="+userId,{
         headers: {
           "Content-type": "application/json",
           Authorization: "Bearer " + token,
@@ -1914,7 +1914,7 @@ const searchBtn2 = () => {
 }
 
 const loadSearchPage = () => {
-  fetch("https://freshkartapi.herokuapp.com/productCategories")
+  fetch("https://freshkartapi.vercel.app/productCategories")
     .then((res) => res.json())
     .then((resData) => {
       let prodCatId = localStorage.getItem("prodCatId");
@@ -1951,7 +1951,7 @@ const loadSearchPage = () => {
     $("#searchTitle").html("SEARCH: "+search);
     console.log("fetch");
     fetch(
-      "https://freshkartapi.herokuapp.com/products" +
+      "https://freshkartapi.vercel.app/products" +
         "?search=" +
         search
     )
@@ -1977,7 +1977,7 @@ const loadSearchPage = () => {
             div.innerHTML = `
           <div class="card">
               <a data-bs-toggle="modal" data-bs-target="#productModal"><img
-                      src="https://freshkartapi.herokuapp.com${prod.imageUrl[0]}" onclick='getProductModalData("${prod._id}")'
+                      src="https://freshkartapi.vercel.app${prod.imageUrl[0]}" onclick='getProductModalData("${prod._id}")'
                       class="card-img-top zoom" alt="..."></a>
                     <div class="card-body text-center">
               <h5 class="card-title">${prod.name}</h5>
